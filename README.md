@@ -1,24 +1,44 @@
-# ¡A jugar! 
+# "ConSumo" 
 
 ## Juego realizado con la biblioteca Wollok Game
 
-![reemplazar por una animación del juego](https://d33wubrfki0l68.cloudfront.net/1ba3cf64b23a4ac786d7432121abbd782794730c/ce83b/documentacion/conceptos/images/wollokcharacter.gif)
+![Texto alternativo](http://imgfz.com/i/fL8cnyx.jpeg)
 
-### Resumen:
+### Resumen: 
+ConSumo es un juego creado con wollok Game, el cual consiste en comer para engodar un sumo.
+
+Tu controlaras un sumo a tu eleccion con el cual tendras que consumir suficiente comida para llegar a las 500 lbs para ganar,
+Para ello tendras que consumir diversos alimento que te haran subir de peso, pero deberas tener cuidado con los sumos rivales y con lo que comes, pues si consumes el alimento equivocado puedes morir o perder vida
 
 
 ### Instrucciones:
+ para mover a tu sumo debes utilizar las teclas (WASD)
+### Bocetos:
 
+![Texto alternativo](http://imgfz.com/i/BJUEOvy.jpeg)
 
-### Acerca de:
+![Texto alternativo](http://imgfz.com/i/Cxh1LPS.jpeg)
 
-Autores:
+### **Acerca de Autores:**
+ **Autores:**
 
-Docente/Curso/Institución:
+-Mamani, Diego
 
-Versión de wollok:
+-Nolli Sosa, Agustin
 
-Fecha:
+-Lima Valle, Manuel
+
+-Nicosia, Nahuel
+
+**Docente/Curso/Institución:**
+
+Lucas Spigariol/paradigma de programación/UTN FRD
+
+**Versión de wollok:**
+1.9.2
+
+**Fecha:**
+ 11/06/2020
 
 [Guía de herramientas](https://www.wollok.org/documentacion/conceptos/)
 
