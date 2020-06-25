@@ -1,0 +1,10 @@
+ 	import wollok.game.*
+import personajes.*
+import fondoDePantalla.*
+import inicio.*
+import comidas.*
+
+program  conSumo {
+	juegos.iniciar()
+	game.start()
+}
