@@ -1,4 +1,4 @@
-	 import wollok.game.*
+import wollok.game.*
 import fondoDePantalla.*
 import personajes.*
 import comidas.*
@@ -23,8 +23,11 @@ object juegos{
      	game.addVisual(escenario)
      	game.addVisual(bordeIzquierdo)
      	game.addVisual(bordeDerecho)
+     	game.addVisual(marcoSuperior)
      	game.addVisual(takeda)
      	game.addVisual(pezGlobo)
+     	game.addVisual(icono)
+     	game.addVisual(barra)
      	takeda.movimiento()
      	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)})
      	[pescado,sushi,sushi2,carne].forEach({pez=>pez. moverseSolo()})

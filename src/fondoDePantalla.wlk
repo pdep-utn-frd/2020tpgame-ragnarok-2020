@@ -28,5 +28,17 @@ class Fondos{
   	image = "escenarios/ganaste.png",
   	position = game.at(0,0)
   )
-  
+  const marcoSuperior = new Fondos(
+  	image = "escenarios/marcoSuperior.png",
+  	position = game.at(5,10)
+  )
+  const icono = new Fondos(
+  	image="img/icono.png",
+  	position = game.at(6,11)
+  )
+  const barra = new Fondos(
+  	image = "escenarios/barra.png",
+  	position = game.at(7,11)
+  	
+  )
   //terminarhoy
