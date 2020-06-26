@@ -24,10 +24,10 @@ object juegos{
      	game.addVisual(bordeIzquierdo)
      	game.addVisual(bordeDerecho)
      	game.addVisual(takeda)
-     	game.addVisual(pezGlobo)
      	takeda.movimiento()
-     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)})
-     	[pescado,sushi,sushi2,carne].forEach({pez=>pez. moverseSolo()})
+     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)  pez.moverseSolo()})
+     	[pescadoP].forEach({pez=>game.addVisual(pez)  pez.moverseSolo()})
+     	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) unVeneno.moverseSolo()})
      	game.whenCollideDo(takeda,{elemento=>elemento.chocar()})
      	game.ground("img/cieloC.png")   	
         }
