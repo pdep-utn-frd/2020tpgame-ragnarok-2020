@@ -1,4 +1,4 @@
-import wollok.game.*
+ import wollok.game.*
 import fondoDePantalla.*
 import personajes.*
 import comidas.*
@@ -25,12 +25,12 @@ object juegos{
      	game.addVisual(bordeDerecho)
      	game.addVisual(marcoSuperior)
      	game.addVisual(takeda)
-     	game.addVisual(pezGlobo)
      	game.addVisual(icono)
      	game.addVisual(barra)
      	takeda.movimiento()
-     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)})
-     	[pescado,sushi,sushi2,carne].forEach({pez=>pez. moverseSolo()})
+     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)  pez.moverseSolo()})
+     	[pescadoP].forEach({pez=>game.addVisual(pez)  pez.moverseSolo()})
+     	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) unVeneno.moverseSolo()})
      	game.whenCollideDo(takeda,{elemento=>elemento.chocar()})
      	game.ground("img/cieloC.png")   	
         }
@@ -55,4 +55,6 @@ object juegos{
         	keyboard.f().onPressDo {self.iniciar()}
         	keyboard.p().onPressDo{game.stop()}
         }
+        
+        
      }

@@ -37,5 +37,5 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center(),peso
 	
 	
 	
-	//terminar
+	//terminarhoy
 	

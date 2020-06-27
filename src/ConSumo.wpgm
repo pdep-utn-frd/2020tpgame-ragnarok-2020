@@ -1,3 +1,4 @@
+
 import wollok.game.*
 import personajes.*
 import fondoDePantalla.*
@@ -8,4 +9,3 @@ program  conSumo {
 	juegos.iniciar()
 	game.start()
 }
-//terminar
