@@ -5,9 +5,9 @@ import inicio.*
 import barraDeVida.*
 
 class Alimentos {
-	var property image = null
-	var property position = null
-	var property peso = null
+	var property image = 0
+	var property position = 0
+	var property peso = 0
 	const anchoE = 18
 	const alturaE = 9
 	
@@ -94,7 +94,7 @@ class ComidaPodrida inherits Alimentos {
 	      barraInicial.actualizar()
 	      game.removeVisual(self)
 	      game.addVisual(self)
-	      self.moverseSolo()
+	      self.ubiAleatoria()
 	    }
 	  
 	
@@ -105,6 +105,9 @@ class Venenos inherits Alimentos {
 
 	method choque(){
 		game.removeVisual(self)
+		game.addVisual(self)
+	    self.ubiAleatoria()
+		
      }
 	method moverseSolo() {
 		game.onTick(900, "movimiento", {self.movimientox()})

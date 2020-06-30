@@ -11,7 +11,7 @@ object barraInicial {
 	const archivo = "escenarios/barra"
       method actualizar(){
       	game.removeVisual(self)
-      	image = archivo + (self.vida()).max(0) +".png"
+      	image = archivo + (self.vida()).max(0).toString() +".png"
       	game.addVisual(self)
       }
       method restarVida(){
