@@ -129,6 +129,6 @@ const pescadoP = new ComidaPodrida(image="pescado/pezPodrido.png",peso=50,positi
 // Declaramos los venenos, reducen la salud de Takeda
 
 
-const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,0), peso = null, danio = 25)
+const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,5), peso = null, danio = 25)
 const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,0), peso = null, danio = 25)
 

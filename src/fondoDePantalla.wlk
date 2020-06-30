@@ -43,4 +43,3 @@ class Fondos{
   	position = game.at(7,11)
   	
   )
-  //terminarhoy

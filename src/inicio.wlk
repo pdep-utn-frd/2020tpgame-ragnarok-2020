@@ -48,18 +48,13 @@ object juegos{
      	})
      	game.ground("img/celda.png")   	
         }
-       
-        // pez.moverseSolo()
-        //unVeneno.moverseSolo()
-        //pez.moverseSolo()
-     
-          method gameOver(){
+            method gameOver(){
         	game.clear()
         	game.width(ancho)
         	game.height(altura)
         	game.title("ConSumo")
         	game.addVisual(perdiste)
-        	game.ground("img/celdaC.png")
+        	game.ground("img/celda.png")
         	keyboard.f().onPressDo {self.iniciar()}
         	keyboard.p().onPressDo{game.stop()}
         }

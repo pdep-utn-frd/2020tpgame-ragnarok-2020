@@ -110,5 +110,4 @@ class Visual{
 	var property image
 	var property position = game.origin()
 }	
-	//terminarhoy
 	

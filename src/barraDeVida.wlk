@@ -2,6 +2,7 @@ import wollok.game.*
 import fondoDePantalla.*
 import personajes.*
 import comidas.*
+import inicio.*
 //la barra de vida debe reducirse cada vez que el personajes choca con un alimento podrido
 
 object barraInicial {
@@ -13,14 +14,16 @@ object barraInicial {
       	game.removeVisual(self)
       	image = archivo + (self.vida()).max(0).toString() +".png"
       	game.addVisual(self)
+      	
       }
       method restarVida(){
       	 vida = vida - 25
+      	 if (vida == 0){    	 	
+      	 	juegos.gameOver()
+      	 }
       }
 
-     }
-
-      
+     }      
 // object acumulacion{
 //     var comida = [pescado,sushi,carne,sushi2]
 // 	method dibujar(){
