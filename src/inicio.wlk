@@ -1,7 +1,8 @@
- import wollok.game.*
+import wollok.game.*
 import fondoDePantalla.*
 import personajes.*
 import comidas.*
+import barraDeVida.*
 
 object juegos{
 	const ancho = 25
@@ -26,26 +27,24 @@ object juegos{
      	game.addVisual(marcoSuperior)
      	game.addVisual(takeda)
      	game.addVisual(icono)
-     	game.addVisual(barra)
+     	game.addVisual(barraInicial)
+     	game.addVisual(sumoMalo)
      	takeda.movimiento()
-     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)  pez.moverseSolo()})
-     	[pescadoP].forEach({pez=>game.addVisual(pez)  pez.moverseSolo()})
-     	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) unVeneno.moverseSolo()})
-     	game.whenCollideDo(takeda,{elemento=>elemento.chocar()})
-     	game.ground("img/cieloC.png")   	
+     	sumoMalo.hastaFinal()
+     	
+//     	game.onTick(1000,"movimiento",{pescado.movientoy()})
+     	game.whenCollideDo(takeda,{elemento=>elemento.choque() takeda.ganar()})
+     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)  })
+     	[pescadoP].forEach({pez=>game.addVisual(pez)})
+     	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) })
+     	game.ground("img/celda.png")   	
         }
-        method tuGanas(){
-        	game.clear()
-        	game.width(ancho)
-        	game.height(altura)
-        	game.title("ConSumo")
-        	game.addVisual(ganaste)
-        	game.ground("img/celdaC.png")
-        	keyboard.f().onPressDo {self.iniciar()}
-        	keyboard.p().onPressDo{game.stop()}
-        	
-        }
-        method gameOver(){
+       
+        // pez.moverseSolo()
+        //unVeneno.moverseSolo()
+        //pez.moverseSolo()
+     
+          method gameOver(){
         	game.clear()
         	game.width(ancho)
         	game.height(altura)
