@@ -1,8 +1,10 @@
 import wollok.game.*
+import personajes.*
 
 class Fondos{
 	var property image
 	var property position = game.origin()
+	
 }
   const menu = new Fondos(
   	image="escenarios/menuInicio.png",

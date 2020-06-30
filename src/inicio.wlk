@@ -12,7 +12,7 @@ object juegos{
      	game.width(ancho)
      	game.height(altura)
      	game.title("conSumo")
-     	game.ground("img/cieloC.png")
+     	game.ground("img/celda.png")
      	game.addVisual(menu)
      	keyboard.enter().onPressDo {self.escenarios()}
      	}

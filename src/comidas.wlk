@@ -79,14 +79,22 @@ class Comida inherits Alimentos{
 	 
 }
 
-class ComidaPodrida  {
+class ComidaPodrida {
 	    var property image
 	    var property position
 	    var property peso
 	    var property danio
+	     method ubiAleatoria(){
+	 	const x = 5.randomUpTo(18).truncate(0)
+		const y = 0.randomUpTo(9).truncate(0)
+		position = game.at(x,y) 
+	      }
 	    method choque(){
-	     barraInicial.restarVida()	
+	      barraInicial.restarVida()	
 	      barraInicial.actualizar()
+	      game.removeVisual(self)
+	      game.addVisual(self)
+	      self.ubiAleatoria()
 	    }
 	  
 	

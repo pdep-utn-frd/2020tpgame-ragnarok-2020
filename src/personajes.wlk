@@ -6,18 +6,18 @@ import inicio.*
 class Sumo{
 	var property image
 	var property position
-  method movimiento(){
-	keyboard.w().onPressDo {self.subir()}
-	keyboard.d().onPressDo {self.derecha()}
-	keyboard.s().onPressDo {self.bajar()}
-	keyboard.a().onPressDo {self.izquierda()}
-     }
+       method movimiento(){
+	   keyboard.w().onPressDo {self.subir()}
+	   keyboard.d().onPressDo {self.derecha()}
+	   keyboard.s().onPressDo {self.bajar()}
+	   keyboard.a().onPressDo {self.izquierda()}
+         }
      method subir(){
-     	position = position.up(1)
-     }
+     	 position = position.up(1)
+          }
      method derecha(){
      	position = position.right(1)
-     }
+         }
      method izquierda(){
      	
      	position = position.left(1)
@@ -43,8 +43,7 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
       method ganar(){
   	     if (self.peso() > 500)
   	          self.tuGanas()
-  	          else 
-  	           game.say(self,"todavia falta")
+  	       
       }
        method tuGanas(){
       	game.clear()
