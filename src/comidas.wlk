@@ -35,7 +35,7 @@ method limitadoy(){
 	 }
 	 return ly
 }
-method movientoy(){
+method movimientoy(){
 	position = position.up(1)
 	     //si llega al limite del tablero resetea position
 	        if (position.y() == 10){
@@ -57,10 +57,10 @@ method movimientox(){
 	 	const x = 5.randomUpTo(anchoE).truncate(0)
 		const y = 0.randomUpTo(alturaE).truncate(0)
 		position = game.at(x,y) 
-	 }
 
+ }
 }
-// comida es la que hace que nuestro personaje aunmente de peso
+
 class Comida inherits Alimentos{
 
 	 
@@ -71,11 +71,14 @@ class Comida inherits Alimentos{
 	 	game.removeVisual(self)
 	 	game.addVisual(self)
  	    self.ubiAleatoria()
+      }
+	 method moverseSolo(){
+	 	game.onTick(1000, "movimiento", { self.movimientoy() })
 	 }
 	 
 	 
 }
-//comida podrida sirve para restar vida cuando este choca con el personaje
+
 class ComidaPodrida  {
 	    var property image
 	    var property position
@@ -91,8 +94,13 @@ class ComidaPodrida  {
 //los venenos matan directamente al jugador 
 class Venenos inherits Alimentos {
 	
+
 	method choque(){
 		game.removeVisual(self)
+     }
+	method moverseSolo() {
+		game.onTick(900, "movimiento", {self.movimientox()})
+
 	}
 	
 	
@@ -109,9 +117,10 @@ const  sushi2 = new Comida(image="pescado/sushi.png",peso=80,position=game.at(13
 
 const pescadoP = new ComidaPodrida(image="pescado/pezPodrido.png",peso=50,position=game.at(6,4),danio=25)
 
+
 // Declaramos los venenos, reducen la salud de Takeda
 
-const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,0), peso = 89)
-const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(8,0), peso = 90)
 
- 
+const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,0), peso = null)
+const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,0), peso = null)
+
