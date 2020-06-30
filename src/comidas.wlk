@@ -81,11 +81,6 @@ class Comida inherits Alimentos{
 
 class ComidaPodrida inherits Alimentos {
 	    var property danio
-//	     method ubiAleatoria(){
-//	 	const x = 5.randomUpTo(18).truncate(0)
-//		const y = 0.randomUpTo(9).truncate(0)
-//		position = game.at(x,y) 
-//	      }
 		method moverseSolo(){
 	 		game.onTick(1000, "movimiento", { self.movimientoy() })
 	 	}
@@ -99,11 +94,13 @@ class ComidaPodrida inherits Alimentos {
 	  
 	
 }
-//los venenos matan directamente al jugador 
+//los venenos restan vida 
 class Venenos inherits Alimentos {
 	
-
+	var property danio
 	method choque(){
+		barraInicial.restarVida()	
+	    barraInicial.actualizar()
 		game.removeVisual(self)
 		game.addVisual(self)
 	    self.ubiAleatoria()
@@ -132,6 +129,6 @@ const pescadoP = new ComidaPodrida(image="pescado/pezPodrido.png",peso=50,positi
 // Declaramos los venenos, reducen la salud de Takeda
 
 
-const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,0), peso = null)
-const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,0), peso = null)
+const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,0), peso = null, danio = 25)
+const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,0), peso = null, danio = 25)
 

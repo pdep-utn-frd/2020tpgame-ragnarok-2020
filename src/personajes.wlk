@@ -14,16 +14,37 @@ class Sumo{
          }
      method subir(){
      	 position = position.up(1)
-          }
+     	 
+     	 	 if (position.y() == 10){
+	        	const x = position.x()
+	        	const y = 9
+	        	position = game.at(x,y)
+	        }
+     	 
+     }
      method derecha(){
      	position = position.right(1)
-         }
+     		if(position.x()==20){
+	      		const x = 19
+	      		const y = position.y()
+	      	position = game.at(x,y)
+	      }	
+     }
      method izquierda(){
-     	
      	position = position.left(1)
+     	if(position.x() < 5){
+	      		const x = 5
+	      		const y = position.y()
+	      	position = game.at(x,y)
+	      }	
      }
      method bajar(){
      	position = position.down(1)
+     	 if (position.y() <= 0){
+	        	const x = position.x()
+	        	const y = 0
+	        	position = game.at(x,y)
+	        }
      }
 }
 
@@ -31,7 +52,7 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
      var property peso = 0
         
         method decirPeso(){
-        	game.say(self,"mi peso es "+ self.peso()+" por el momento")
+        	game.say(self,"peso "+ self.peso().toString())
         }
         method sumarPeso(kilos){
         	return peso+=kilos

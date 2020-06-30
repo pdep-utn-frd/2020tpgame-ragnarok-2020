@@ -33,7 +33,10 @@ object juegos{
      	sumoMalo.hastaFinal()
      	
 //     	game.onTick(1000,"movimiento",{pescado.movientoy()})
-     	game.whenCollideDo(takeda,{elemento=>elemento.choque() takeda.ganar()})
+     	game.whenCollideDo(takeda,{elemento=>
+     							if (elemento != escenario) {elemento.choque()} 
+     							takeda.ganar()
+     	})
      	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)
      						pez.moverseSolo()
      	})
