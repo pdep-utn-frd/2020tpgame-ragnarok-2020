@@ -11,48 +11,48 @@ class Alimentos {
 	const anchoE = 18
 	const alturaE = 9
 	
-//method limitadox(){
-//	var lx
-//	lx=0.randomUpTo(20).truncate(0)
-//	 if (lx >= 19){
-//	 	lx = 7
-//	 	return lx
-//	 }
-//	 if (lx <=5){
-//	 	lx = 9
-//	 	return lx
-//	 }
-//	 return lx
-//}
-//method limitadoy(){
-//	var ly
-//	ly = 0.randomUpTo(10).truncate(0)
-//	 if(ly >= 10){
-//	 	ly = 0.randomUpTo(10).truncate(0)
-//	 	 if (ly>=10){
-//	 	 	ly = 2
-//	 	 }
-//	 }
-//	 return ly
-//}
-//method movientoy(){
-//	position = position.up(1)
-//	     //si llega al limite del tablero resetea position
-//	        if (position.y() == 10){
-//	        	const x = self.limitadox()
-//	        	const y = self.limitadoy()
-//	        	position = game.at(x,y)
-//	        }
-//}
-//method movimientox(){
-//	position = position.right(1)
-//	      //si llega al limite del tablero resetea position
-//	      if(position.x()==18){
-//	      	const x = self.limitadox()
-//	      	const y = self.limitadoy()
-//	      	position = game.at(x,y)
-//	      }	
-//}
+method limitadox(){
+	var lx
+	lx=0.randomUpTo(20).truncate(0)
+	 if (lx >= 19){
+	 	lx = 7
+	 	return lx
+	 }
+	 if (lx <=5){
+	 	lx = 9
+	 	return lx
+	 }
+	 return lx
+}
+method limitadoy(){
+	var ly
+	ly = 0.randomUpTo(10).truncate(0)
+	 if(ly >= 10){
+	 	ly = 0.randomUpTo(10).truncate(0)
+	 	 if (ly>=10){
+	 	 	ly = 2
+	 	 }
+	 }
+	 return ly
+}
+method movientoy(){
+	position = position.up(1)
+	     //si llega al limite del tablero resetea position
+	        if (position.y() == 10){
+	        	const x = self.limitadox()
+	        	const y = self.limitadoy()
+	        	position = game.at(x,y)
+	        }
+}
+method movimientox(){
+	position = position.right(1)
+	      //si llega al limite del tablero resetea position
+	      if(position.x()==18){
+	      	const x = self.limitadox()
+	      	const y = self.limitadoy()
+	      	position = game.at(x,y)
+	      }	
+}
     method ubiAleatoria(){
 	 	const x = 5.randomUpTo(anchoE).truncate(0)
 		const y = 0.randomUpTo(alturaE).truncate(0)
