@@ -16,7 +16,7 @@ object juegos{
      	game.addVisual(menu)
      	keyboard.enter().onPressDo {self.escenarios()}
      	}
-     method escenarios(){
+    	 method escenarios(){
      	game.clear()
      	game.width(ancho)
      	game.height(altura)
@@ -34,9 +34,15 @@ object juegos{
      	
 //     	game.onTick(1000,"movimiento",{pescado.movientoy()})
      	game.whenCollideDo(takeda,{elemento=>elemento.choque() takeda.ganar()})
-     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)  })
-     	[pescadoP].forEach({pez=>game.addVisual(pez)})
-     	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) })
+     	[pescado,sushi,sushi2,carne].forEach({pez=>game.addVisual(pez)
+     						pez.moverseSolo()
+     	})
+     	[pescadoP].forEach({pez=>game.addVisual(pez)
+     						pez.moverseSolo()
+     	})
+     	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno)
+     								unVeneno.moverseSolo()
+     	})
      	game.ground("img/celda.png")   	
         }
        

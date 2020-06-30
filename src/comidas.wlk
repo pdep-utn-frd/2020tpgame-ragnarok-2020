@@ -79,22 +79,22 @@ class Comida inherits Alimentos{
 	 
 }
 
-class ComidaPodrida {
-	    var property image
-	    var property position
-	    var property peso
+class ComidaPodrida inherits Alimentos {
 	    var property danio
-	     method ubiAleatoria(){
-	 	const x = 5.randomUpTo(18).truncate(0)
-		const y = 0.randomUpTo(9).truncate(0)
-		position = game.at(x,y) 
-	      }
+//	     method ubiAleatoria(){
+//	 	const x = 5.randomUpTo(18).truncate(0)
+//		const y = 0.randomUpTo(9).truncate(0)
+//		position = game.at(x,y) 
+//	      }
+		method moverseSolo(){
+	 		game.onTick(1000, "movimiento", { self.movimientoy() })
+	 	}
 	    method choque(){
 	      barraInicial.restarVida()	
 	      barraInicial.actualizar()
 	      game.removeVisual(self)
 	      game.addVisual(self)
-	      self.ubiAleatoria()
+	      self.moverseSolo()
 	    }
 	  
 	
@@ -117,7 +117,7 @@ class Venenos inherits Alimentos {
 // Declaramos los alimentos buenos, dan salud y aumenta el peso de Takeda
 //estos son los alimentos buenos
 const  pescado = new Comida(image="pescado/pescadoA.png",peso=30,position=game.at(8,3))
-const  sushi = new Comida(image="pescado/pescadoB.png",peso=40,position=game.at(13,7))
+const  sushi = new Comida(image="pescado/pescadoB.png",peso=40,position=game.at(15,7))
 const  carne = new Comida(image="pescado/carne.png",peso=10,position=game.at(13,7))
 const  sushi2 = new Comida(image="pescado/sushi.png",peso=80,position=game.at(13,0))
 
