@@ -29,7 +29,7 @@ class Fondos{
   	position = game.at(0,0)
   )
   const ganaste = new Fondos(
-  	image = "escenarios/ganaste.png",
+  	image = "escenarios/win.png",
   	position = game.at(0,0)
   )
   const marcoSuperior = new Fondos(
@@ -38,7 +38,7 @@ class Fondos{
   )
   const icono = new Fondos(
   	image="img/icono.png",
-  	position = game.at(9,11)
+  	position = game.at(10,11)
   )
   const barraD = new Fondos(
   	image="escenarios/barraDer.png",
@@ -51,6 +51,10 @@ class Fondos{
  const barraInferior = new Fondos(
  	image = "escenarios/barraSuperior.png",
  	position = game.at(5,0)
+ )
+ const cargando = new Fondos(
+ 	image= "img/carga.png",
+ 	position=game.origin()
  )
   	
   

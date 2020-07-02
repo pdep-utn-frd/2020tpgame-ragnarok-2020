@@ -51,7 +51,7 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
      var property peso = 0
         
         method decirPeso(){
-        	game.say(self,"mi peso es "+ (self.peso()).max(0)+" por el momento")
+        	game.say(self,"mi peso es "+ (self.peso()).max(0)+" kg por el momento")
         }
         method sumarPeso(kilos){
         	return peso += kilos
@@ -64,6 +64,9 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
 	    }
    	   method Alimentar(comida){
    	   	return  self.sumarPeso(comida.peso())
+   	   }
+   	   method rebotar(){
+   	   	position = position.right(3)
    	   }
    
       method ganar(){
@@ -106,16 +109,11 @@ object sumoMalo inherits Visual(image="sumos/malo.png",position=game.at(5,3)){
 	  	})
 	  }
 	 method choque(){
-	   takeda.derecha()
+	   takeda.rebotar()
 	 }
-	
-
 	}
-	
- 
 	
 class Visual{
 	var property image
 	var property position = game.origin()
 }	
-	//terminarhoy

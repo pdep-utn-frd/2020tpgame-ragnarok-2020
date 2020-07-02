@@ -28,10 +28,7 @@ class Comida inherits Alimentos{
 	 	game.removeVisual(self)
 	 	game.addVisual(self)
  	    self.ubicacionAleatoria()
-      }
-	
-	 
-	 
+      }	 
 }
 
 class ComidaPodrida inherits Alimentos {
@@ -41,7 +38,7 @@ class ComidaPodrida inherits Alimentos {
 
 method limitadox(){
 	var lx 
-	  lx = 0.randomUpto(20).truncate(0)
+	  lx = 0.randomUpTo(20).truncate(0)
 	   if (lx>=19){
 	   	 lx = 7
 	   	  return lx
@@ -54,21 +51,23 @@ method limitadox(){
 }	
 method limitadoy(){
 	 var ly
-	 
 	 ly = 0.randomUpTo(10).truncate(0)
-	  if (ly >= 10){
-	  	 ly = 0.randomUpTo(10).truncate(0)
-	  	   if (ly>=10){
-	  	   	ly=2
+	  if ( ly >= 10 || ly <= 1){
+	  	  ly = 0.randomUpTo(10).truncate(0)
+	  	   if (ly>=10|| ly <= 1){
+	  	   	ly=5
 	  	   }
 	  }
 	 return ly
 }
+   method moverseSolo(){
+   	game.onTick(1000,"movimiento",{self.movimientoy()})
+   }
 
 method movimientoy(){
 	position = position.down(1)
 	     //si llega al limite del tablero resetea position
-	        if (position.y() == 10){
+	        if (position.y() <= 1){
 	        	const x = self.limitadox()
 	        	const y = self.limitadoy()
 	        	position = game.at(x,y)
@@ -117,12 +116,12 @@ class Venenos inherits Alimentos {
 //estos son los alimentos buenos
 
 const  pescado = new Comida(image="pescado/Pescado.png",peso=30,position=game.at(5,10))
-const  sushi = new Comida(image="pescado/pescado3.png",peso=40,position=game.at(7,10))
-const  carne = new Comida(image="comida/carne.png",peso=10,position=game.at(19,1))
-const  sushi2 = new Comida(image="pescado/sushi.png",peso=80,position=game.at(5,1))
+const  sushi = new Comida(image="pescado/pescado3.png",peso=50,position=game.at(7,10))
+const  carne = new Comida(image="comida/carne.png",peso=40,position=game.at(19,1))
+const  sushi2 = new Comida(image="pescado/sushi.png",peso=60,position=game.at(5,1))
 const manzana = new Comida(image="comida/manzana.png",peso = 20,position=game.at(19,10))
 
-// Declaramos los alimentos podiridos, restan salud y disminuyen el peso de Takeda
+// Declaramos los alimentos podridos, restan salud y disminuyen el peso de Takeda
 
 const arrozP = new ComidaPodrida(image="comida/arrozP.png",position=game.at(6,4), danio = 20)
 const manzanaP = new ComidaPodrida(image="comida/manzanaPodrida.png",position = game.at(16,5),danio = 40)

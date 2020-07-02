@@ -6,7 +6,7 @@ import comidas.*
 
 object barraInicial {
 	var property image ="escenarios/barra100.png"
-	var property position=game.at(10,11)
+	var property position=game.at(11,11)
 	var  property vida = 100
 	const archivo = "escenarios/barra"
       method actualizar(){
