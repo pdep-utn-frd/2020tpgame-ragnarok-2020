@@ -113,7 +113,7 @@ class Venenos inherits Alimentos {
 }
 
 // Declaramos los alimentos buenos, aumenta el peso de Takeda
-//estos son los alimentos buenos
+//estos son los alimentos buenos :
 
 const  pescado = new Comida(image="pescado/Pescado.png",peso=30,position=game.at(5,10))
 const  sushi = new Comida(image="pescado/pescado3.png",peso=50,position=game.at(7,10))
