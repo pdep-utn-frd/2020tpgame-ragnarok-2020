@@ -1,6 +1,7 @@
 import wollok.game.*
 import fondoDePantalla.*
 import inicio.*
+import barraDeVida.*
 //la clase sumo nos permite manejar distintos sumos
 
 class Sumo{
@@ -14,16 +15,35 @@ class Sumo{
          }
      method subir(){
      	 position = position.up(1)
+     	  if (position.y() == 11){
+     	  	const x = position.x()
+     	  	const y = 10
+     	  	position = game.at(x,y)
+     	  }
           }
      method derecha(){
      	position = position.right(1)
+     	if (position.x() == 20){
+     		const x = 19
+     		const y = position.y()
+     		position = game.at(x,y)
+     	}
          }
      method izquierda(){
-     	
      	position = position.left(1)
+     	 if(position.x() == 4){
+     	 	const x = 5
+     	 	const y = position.y()
+     	 position = game.at(x,y)	
+     	 }
      }
      method bajar(){
      	position = position.down(1)
+     	 if (position.y() == 0){
+     	 	const x = position.x()
+     	 	const y = 1
+     	 	 position = game.at(x,y)
+     	 }
      }
 }
 
@@ -31,11 +51,17 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
      var property peso = 0
         
         method decirPeso(){
-        	game.say(self,"mi peso es "+ self.peso()+" por el momento")
+        	game.say(self,"mi peso es "+ (self.peso()).max(0)+" por el momento")
         }
         method sumarPeso(kilos){
-        	return peso+=kilos
+        	return peso += kilos
         } 
+        method restarPeso(perder){
+	      	 return peso -= perder
+	      }
+	    method perderPeso(comida){
+	    	return self.restarPeso(comida.danio())
+	    }
    	   method Alimentar(comida){
    	   	return  self.sumarPeso(comida.peso())
    	   }
@@ -43,8 +69,11 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
       method ganar(){
   	     if (self.peso() > 500)
   	          self.tuGanas()
-  	       
+  	       else
+  	         if (barraInicial.vida()==0)
+  	            juegos.gameOver()
       }
+      
        method tuGanas(){
       	game.clear()
       	game.width(25)

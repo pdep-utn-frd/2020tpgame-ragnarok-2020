@@ -6,7 +6,7 @@ import comidas.*
 
 object barraInicial {
 	var property image ="escenarios/barra100.png"
-	var property position=game.at(7,11)
+	var property position=game.at(10,11)
 	var  property vida = 100
 	const archivo = "escenarios/barra"
       method actualizar(){
@@ -20,17 +20,6 @@ object barraInicial {
 
      }
 
-      
-// object acumulacion{
-//     var comida = [pescado,sushi,carne,sushi2]
-// 	method dibujar(){
-// 			
-// 			   
-// 	}
-// }
-//  
-//falta terminar y areglar      
-      
-		
+
 
 	
