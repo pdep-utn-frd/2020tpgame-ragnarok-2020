@@ -7,8 +7,8 @@
 ### Resumen: 
 ConSumo es un juego creado con wollok Game, el cual consiste en comer para engodar un sumo.
 
-Tu controlaras un sumo a tu eleccion con el cual tendras que consumir suficiente comida para llegar a las 500 lbs para ganar,
-Para ello tendras que consumir diversos alimento que te haran subir de peso, pero deberas tener cuidado con los sumos rivales y con lo que comes, pues si consumes el alimento equivocado puedes morir o perder vida
+Tu controlaras un sumo con el cual tendras que consumir suficiente comida para llegar a las 500 lbs para ganar,
+Para ello tendras que comer diversos alimento que te haran subir de peso, pero deberas tener cuidado con los sumos rivales y con lo que comes, pues si consumes el alimento equivocado puedes morir o perder vida
 
 
 ### Instrucciones:

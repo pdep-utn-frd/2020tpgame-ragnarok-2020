@@ -84,8 +84,7 @@ object takeda inherits Sumo(image="sumos/takeda.png",position=game.center()){
       	game.title("ConSumo")
       	game.addVisual(ganaste)
       	game.ground("img/celdaC.png")
-      	keyboard.f().onPressDo {juegos.escenarios()}
-      	keyboard.p().onPressDo{game.stop()}
+      	keyboard.h().onPressDo{game.stop()}
         	
         }
 	  
