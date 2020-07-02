@@ -17,7 +17,7 @@ Para ello tendras que comer diversos alimento que te haran subir de peso, pero d
 
 ![Texto alternativo](http://imgfz.com/i/dSvV3y9.png)
 
-![Texto alternativo](http://imgfz.com/i/Cxh1LPS.jpeg)
+![Texto alternativo](http://imgfz.com/i/DM5BnyH.png)
 
 ### **Acerca de Autores:**
  **Autores:**
