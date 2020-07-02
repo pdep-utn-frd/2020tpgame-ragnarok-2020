@@ -37,7 +37,7 @@ object juegos{
 
      	game.whenCollideDo(takeda,{elemento=>elemento.choque() takeda.ganar()})
      	[pescado,sushi,sushi2,carne,manzana].forEach({elemento=>game.addVisual(elemento) })
-     	[arrozP, manzanaP,pezp].forEach({pez=>game.addVisual(pez) pez.movimientoy()})
+     	[arrozP, manzanaP,pezp].forEach({pez=>game.addVisual(pez) pez.moverseSolo()})
      	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) unVeneno.moverseSolo() })
 
      }

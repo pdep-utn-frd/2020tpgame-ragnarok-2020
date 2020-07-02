@@ -41,7 +41,7 @@ class ComidaPodrida inherits Alimentos {
 
 method limitadox(){
 	var lx 
-	  lx = 0.randomUpto(20).truncate(0)
+	  lx = 0.randomUpTo(20).truncate(0)
 	   if (lx>=19){
 	   	 lx = 7
 	   	  return lx
@@ -56,19 +56,22 @@ method limitadoy(){
 	 var ly
 	 
 	 ly = 0.randomUpTo(10).truncate(0)
-	  if (ly >= 10){
+	  if (ly >= 10 || ly <= 1){
 	  	 ly = 0.randomUpTo(10).truncate(0)
-	  	   if (ly>=10){
-	  	   	ly=2
+	  	   if (ly>=10 || ly <= 1){
+	  	   	ly=5
 	  	   }
 	  }
 	 return ly
+}
+ method moverseSolo(){
+	game.onTick(1000, "movimiento", { self.movimientoy()})
 }
 
 method movimientoy(){
 	position = position.down(1)
 	     //si llega al limite del tablero resetea position
-	        if (position.y() == 10){
+	        if (position.y() <= 1){
 	        	const x = self.limitadox()
 	        	const y = self.limitadoy()
 	        	position = game.at(x,y)
