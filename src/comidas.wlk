@@ -10,6 +10,7 @@ class Alimentos {
 	var property peso = 0
 	const anchoDeEscenario = 19
 	const alturaDeEscenario = 11
+
 	
     method ubicacionAleatoria(){
 	 	const x = 5.randomUpTo(anchoDeEscenario).truncate(0)
@@ -81,29 +82,30 @@ method movimientox(){
 	      	const y = self.limitadoy()
 	      	position = game.at(x,y)
 	      }	
+      }
+      method choque(){
+      	barraInicial.restarVida()
+      	barraInicial.actualizar()
+      	takeda.perderPeso(self)
+      	takeda.decirPeso()
+      	game.removeVisual(self)
+      	game.addVisual(self)
+      	self.ubicacionAleatoria()
+      }
+
 }
-	  
-	    method choque(){
-	      barraInicial.restarVida()	
-	      barraInicial.actualizar()
-	      takeda.perderPeso(self)
-	      takeda.decirPeso()
-	      game.removeVisual(self)
-	      game.addVisual(self)
-	      self.ubicacionAleatoria()
-	    }
-	  
-	
-}
-//los venenos matan directamente al jugador 
+
+
+//los venenos te matan
 class Venenos inherits Alimentos {
 	
     method moverseSolo(){ 
-    	game.onTick(2000,"movimiento",{self.ubicacionAleatoria()})
+    	game.onTick(4000,"movimiento",{self.ubicacionAleatoria()})
     }
     
 	method choque(){
 		juegos.gameOver()
+		
      }
 	
 	
@@ -113,6 +115,7 @@ class Venenos inherits Alimentos {
 
 // Declaramos los alimentos buenos, aumenta el peso de Takeda
 //estos son los alimentos buenos
+
 const  pescado = new Comida(image="pescado/Pescado.png",peso=30,position=game.at(5,10))
 const  sushi = new Comida(image="pescado/pescado3.png",peso=40,position=game.at(7,10))
 const  carne = new Comida(image="comida/carne.png",peso=10,position=game.at(19,1))
@@ -124,9 +127,8 @@ const manzana = new Comida(image="comida/manzana.png",peso = 20,position=game.at
 const arrozP = new ComidaPodrida(image="comida/arrozP.png",position=game.at(6,4), danio = 20)
 const manzanaP = new ComidaPodrida(image="comida/manzanaPodrida.png",position = game.at(16,5),danio = 40)
 const pezp = new ComidaPodrida(image="pescado/pezP.png",position = game.at(14,7),danio = 10)
+
 // Declaramos los venenos, reducen la salud de Takeda
-
-
 const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,2), peso = null)
 const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,3), peso = null)
 

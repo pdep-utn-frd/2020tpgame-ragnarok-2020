@@ -119,4 +119,3 @@ class Visual{
 	var property position = game.origin()
 }	
 	//terminarhoy
-	

@@ -16,10 +16,13 @@ object juegos{
      	game.addVisual(menu)
      	keyboard.enter().onPressDo {self.escenarios()}
      	}
+
      	method reglasDeJuego(){
      		
      	}
-     method escenarios(){
+
+    	 method escenarios(){
+
      	game.clear()
      	game.width(ancho)
      	game.height(altura)
@@ -31,20 +34,23 @@ object juegos{
      	game.addVisual(sumoMalo)
      	takeda.movimiento()
      	sumoMalo.hastaFinal()
+
      	game.whenCollideDo(takeda,{elemento=>elemento.choque() takeda.ganar()})
      	[pescado,sushi,sushi2,carne,manzana].forEach({elemento=>game.addVisual(elemento) })
      	[arrozP, manzanaP,pezp].forEach({pez=>game.addVisual(pez) pez.movimientoy()})
      	[pezGlobo, veneno].forEach({unVeneno=>game.addVisual(unVeneno) unVeneno.moverseSolo() })
-     	game.ground("img/celda.png")   	
-        }
+
+     }
         
-          method gameOver(){
+
+            method gameOver(){
+
         	game.clear()
         	game.width(ancho)
         	game.height(altura)
         	game.title("ConSumo")
         	game.addVisual(perdiste)
-        	game.ground("img/celdaC.png")
+        	game.ground("img/celda.png")
         	keyboard.f().onPressDo {self.iniciar()}
         	keyboard.p().onPressDo{game.stop()}
         }
