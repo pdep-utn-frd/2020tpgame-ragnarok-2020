@@ -23,7 +23,7 @@ class Alimentos {
 class Comida inherits Alimentos{
 	
 	 method choque(){
-	 	takeda.Alimentar(self)
+	 	takeda.alimentar(self)
 	 	takeda.decirPeso()
 	 	game.removeVisual(self)
 	 	game.addVisual(self)
@@ -87,7 +87,7 @@ method movimientox(){
       }
       method choque(){
       	barraInicial.restarVida()
-      	barraInicial.actualizar()
+//      	barraInicial.actualizar()
       	takeda.perderPeso(self)
       	takeda.decirPeso()
       	game.removeVisual(self)
@@ -106,6 +106,7 @@ class Venenos inherits Alimentos {
     }
     
 	method choque(){
+		self.ubicacionAleatoria()
 		juegos.gameOver()
 		
      }

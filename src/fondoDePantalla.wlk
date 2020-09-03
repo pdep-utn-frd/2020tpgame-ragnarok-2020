@@ -57,4 +57,7 @@ class Fondos{
  	position=game.origin()
  )
   	
-  
+  class Visual{
+	var property image
+	var property position = game.origin()
+}	
