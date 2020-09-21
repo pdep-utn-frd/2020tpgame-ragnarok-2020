@@ -8,6 +8,18 @@ object takeda {
 	var property peso = 0    
 	var property image = "sumos/takeda.png"
 	var property position = game.center()
+	
+	method masticar(){
+		sonidoDeMasticar.first().play()
+		sonidoDeMasticar.clear()
+		sonidoDeMasticar.add(game.sound("sonido/sMasticar.mp3"))
+	}
+	
+	method masticarP() {
+		sonidoDeMasticarP.first().play()
+		sonidoDeMasticarP.clear()
+		sonidoDeMasticarP.add(game.sound("sonido/sMasticarP.mp3"))
+	}
         
     method movimiento() {
     	keyboard.w().onPressDo {self.subir()}
@@ -52,6 +64,7 @@ object takeda {
    	
    	method rebotar() {
    		position = position.right(3)
+   		return position
     }
     
     method ganar() {
@@ -71,6 +84,7 @@ object takeda {
       	game.title("ConSumo")
       	game.addVisual(ganaste)
       	game.ground("img/celdaC.png")
+      	musicaDeTriunfo.play()
       	keyboard.h().onPressDo{game.stop()}   	
     }	  
 }  
@@ -83,6 +97,12 @@ object sumoMalo {
 	
 	method moverse() {
 	  	 position = position.right(1)
+	}
+	
+	method golpear() {
+		sonidoDeGolpe.first().play()
+		sonidoDeGolpe.clear()
+		sonidoDeGolpe.add(game.sound("sonido/sGolpe.mp3"))
 	}
 	
 	method image() = "sumos/malo.png"
@@ -102,5 +122,8 @@ object sumoMalo {
 			  self.moverse()})
 	}
 	
-	method choque() = takeda.rebotar()	
+	method choque() { 
+		self.golpear()
+		takeda.rebotar()
+		}	
 }

@@ -16,17 +16,19 @@ object juegos {
     	game.title("conSumo")
     	game.ground("img/celda.png")
     	game.addVisual(menu)
-    	keyboard.enter().onPressDo {self.reglasDeJuego()}
+    	game.schedule(500,{ => musicaDeMenu.first().play()})
+    	keyboard.enter().onPressDo {self.reglasDeJuego() musicaDeMenu.first().stop()}
     }
     
     method reglasDeJuego(){
+    	musicaDeIntro.first().play()
     	game.clear()
     	game.width(ancho)
     	game.height(altura)
     	game.title("conSumo")
     	game.ground("img/celda.png")
     	game.addVisual(cargando)
-    	game.onTick(4000,"carga",{self.escenarios()})
+    	game.onTick(4000,"carga",{self.escenarios() musicaDeIntro.first().stop()})
     }
     
     method escenarios() {
@@ -44,10 +46,12 @@ object juegos {
     	takeda.movimiento()
     	sumoMalo.hastaFinal()
     	game.whenCollideDo(takeda,{elemento=>elemento.choque() takeda.ganar()})
-     	[pescado,sushi,sushi2,carne,manzana].forEach({elemento=>game.addVisual(elemento) })
-     	[arrozP, manzanaP,pezp,pezGlobo,veneno].forEach({pez=>game.addVisual(pez) pez.moverseSolo()})
+     	[pescado,sushi,sushi2,carne,manzana].forEach({elemento => game.addVisual(elemento) })
+     	[arrozP, manzanaP,pezP,pezGlobo,veneno].forEach({elemento => game.addVisual(elemento) elemento.moverseSolo()})
      	pezGlobo.position(game.at(9,2))
      	veneno.position(game.at(6,3))
+     	musicaDeCierre.clear()
+     	musicaDeCierre.add(game.sound("sonido/musicaFinal.mp3"))
 
     }
     
@@ -58,7 +62,14 @@ object juegos {
         game.title("ConSumo")
         game.addVisual(perdiste)
         game.ground("img/celda.png")
-        keyboard.f().onPressDo {self.iniciar()}
+        
+        musicaDeCierre.first().play()
+    	musicaDeIntro.clear() 
+    	musicaDeIntro.add(game.sound("sonido/musicaIntro.mp3"))
+    	musicaDeMenu.clear()
+    	musicaDeMenu.add(game.sound("sonido/musicaMenu.mp3"))
+        
+        keyboard.f().onPressDo {self.iniciar() musicaDeCierre.first().stop()}
         keyboard.h().onPressDo{game.stop()}
     }
 }

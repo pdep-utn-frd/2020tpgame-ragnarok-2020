@@ -67,3 +67,17 @@ const cargando = new Fondos(
  	image= "img/carga.png",
  	position=game.origin()
  )
+ 
+const musicaDeCierre = [game.sound("sonido/musicaFinal.mp3")]
+
+const musicaDeIntro = [game.sound("sonido/musicaIntro.mp3")]
+
+const musicaDeMenu = [game.sound("sonido/musicaMenu.mp3")]
+
+const musicaDeTriunfo = game.sound("sonido/musicaDeTriunfo.mp3")
+
+const sonidoDeMasticar = [game.sound("sonido/sMasticar.mp3")]
+
+const sonidoDeMasticarP = [game.sound("sonido/sMasticarP.mp3")]
+
+const sonidoDeGolpe = [game.sound("sonido/sGolpe.mp3")]        

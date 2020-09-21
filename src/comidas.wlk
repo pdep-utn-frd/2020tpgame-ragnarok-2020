@@ -26,6 +26,7 @@ class Comida inherits Alimentos{
 	
 	override method choque(){
 		takeda.alimentar(self)
+		takeda.masticar()
 		takeda.decirPeso()
 		game.removeVisual(self)
 		game.addVisual(self)
@@ -46,15 +47,19 @@ class ComidaPodrida inherits Alimentos {
 		  self.ubicacionAleatoria()
 	}
 	
-	override method moverseSolo() = game.onTick(1000,"movimiento",{self.movimientoy()})
+	override method moverseSolo() { 
+		game.onTick(1000,"movimiento",{self.movimientoy()})	
+	}
 	
 	override method choque(){
 		barraInicial.restarVida()
 		takeda.perderPeso(self)
+		takeda.masticarP()
 		takeda.decirPeso()
 		game.removeVisual(self)
 		game.addVisual(self)
 		self.ubicacionAleatoria()
+		
 	}
 }
 
@@ -62,10 +67,14 @@ class ComidaPodrida inherits Alimentos {
 
 class Venenos inherits Alimentos {
 	
-	override method moverseSolo() = game.onTick(4000,"movimiento",{self.ubicacionAleatoria()})
+	override method moverseSolo() { 
+		game.onTick(4000,"movimiento",{self.ubicacionAleatoria()})
+	}
 	
     
-	override method choque() = barraInicial.vida(0)	
+	override method choque() { 
+		barraInicial.vida(0)
+	}	
 }
 
 // Declaramos los alimentos buenos, aumentan el peso de Takeda:
@@ -80,10 +89,9 @@ const manzana = new Comida(image="comida/manzana.png",peso = 20,position=game.at
 
 const arrozP = new ComidaPodrida(image="comida/arrozP.png",peso = 0, position=game.at(6,4), danio = 20)
 const manzanaP = new ComidaPodrida(image="comida/manzanaPodrida.png",peso = 0, position = game.at(16,5),danio = 40)
-const pezp = new ComidaPodrida(image="pescado/pezP.png",peso = 0, position = game.at(14,7),danio = 10)
+const pezP = new ComidaPodrida(image="pescado/pezP.png",peso = 0, position = game.at(14,7),danio = 10)
 
 // Declaramos los venenos, matan a Takeda:
 
 const  pezGlobo = new Venenos(image="venenos/globo.png",position=game.at(9,2), peso = null)
-const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,3), peso = null)
-
+const  veneno = new Venenos(image="venenos/veneno.png", position=game.at(6,3), peso = null )
