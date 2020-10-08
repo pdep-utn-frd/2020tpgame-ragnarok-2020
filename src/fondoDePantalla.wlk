@@ -45,7 +45,7 @@ const marcoSuperior = new Fondos(
 
 const icono = new Fondos(
   	image="img/icono.png",
-  	position = game.at(10,11)
+  	position = game.at(6,11)
   )
 
 const barraD = new Fondos(
@@ -67,6 +67,13 @@ const cargando = new Fondos(
  	image= "img/carga.png",
  	position=game.origin()
  )
+ 
+ const balanza = new Fondos(
+ 	image= "img/kg.png",
+ 	position=game.at(16,11)
+ )
+ 
+
  
 const musicaDeCierre = [game.sound("sonido/musicaFinal.mp3")]
 

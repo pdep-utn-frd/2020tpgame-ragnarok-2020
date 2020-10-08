@@ -27,7 +27,7 @@ class Comida inherits Alimentos{
 	override method choque(){
 		takeda.alimentar(self)
 		takeda.masticar()
-		takeda.decirPeso()
+		//takeda.decirPeso()
 		game.removeVisual(self)
 		game.addVisual(self)
 		self.ubicacionAleatoria()
@@ -55,7 +55,7 @@ class ComidaPodrida inherits Alimentos {
 		barraInicial.restarVida()
 		takeda.perderPeso(self)
 		takeda.masticarP()
-		takeda.decirPeso()
+		//takeda.decirPeso()
 		game.removeVisual(self)
 		game.addVisual(self)
 		self.ubicacionAleatoria()

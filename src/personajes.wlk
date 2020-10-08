@@ -44,7 +44,7 @@ object takeda {
     	position = game.at((position.x() - 1).max(5), position.y())
     }
     
-    method decirPeso() = game.say(self,"mi peso es "+ (self.peso()).max(0)+" kg por el momento")
+    //method decirPeso() = game.say(self,"mi peso es "+ (self.peso()).max(0)+" kg por el momento")
     
     method sumarPeso(kilos) {
     	peso += kilos
@@ -69,7 +69,7 @@ object takeda {
     
     method ganar() {
     	
-    	if (self.peso() > 500)
+    	if (self.peso() >= 500)
   	      self.tuGanas()
   	      
   	    else
@@ -89,15 +89,19 @@ object takeda {
     }	  
 }  
 	
-object sumoMalo {
+
+class SumoMalo {
 	
-	var property finalX =18
-	var  property finalY = 3
-	var property position =  game.at(5,3) 
+	var property finalX = null
+	var  property finalY = null
+	var property inicialY = null
+	var property position = null 
 	
 	method moverse() {
 	  	 position = position.right(1)
 	}
+	
+	method image() = "sumos/malo.png"
 	
 	method golpear() {
 		sonidoDeGolpe.first().play()
@@ -105,10 +109,8 @@ object sumoMalo {
 		sonidoDeGolpe.add(game.sound("sonido/sGolpe.mp3"))
 	}
 	
-	method image() = "sumos/malo.png"
-	
 	method volver() {
-	  	position = game.at(5,finalY)
+	  	position = game.at(inicialY,finalY)
 	}
 	
 	method hastaFinal() {
@@ -122,8 +124,15 @@ object sumoMalo {
 			  self.moverse()})
 	}
 	
-	method choque() { 
+	method choque(){
 		self.golpear()
-		takeda.rebotar()
-		}	
+		takeda.rebotar()	
+	} 
 }
+
+const fuji = new SumoMalo (finalX = 18, finalY = 2,inicialY=5,position = game.at(5,2))
+const kai = new SumoMalo (finalX=18,finalY = 8,inicialY=5,position = game.at(5,8))
+
+
+
+
